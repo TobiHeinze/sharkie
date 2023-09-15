@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+    <link rel="icon" sizes="16x16 32x32 64x64" type="image/png" href="./img/1.Sharkie/favicon.png">
+
+	<title>Sharkie</title>
+
+	<script src="./classes/drawable-object.class.js"></script>
+	<script src="./classes/movable-object.class.js"></script>
+	<script src="./classes/throwable-object.class.js"></script>
+	<script src="./classes/character.class.js"></script>
+	<script src="./classes/puffer-fish.class.js"></script>
+	<script src="./classes/puffer-fish-green.class.js"></script>
+	<script src="./classes/puffer-fish-blue.class.js"></script>
+	<script src="./classes/puffer-fish-red.class.js"></script>
+	<script src="./classes/jelly-fish.class.js"></script>
+	<script src="./classes/jelly-fish-lila.class.js"></script>
+	<script src="./classes/jelly-fish-yellow.class.js"></script>
+	<script src="./classes/status-bar-poison.class.js"></script>
+	<script src="./classes/status-bar-health.class.js"></script>
+	<script src="./classes/status-bar-health-endboss.class.js"></script>
+	<script src="./classes/status-bar-coin.class.js"></script>
+	<script src="./classes/background-object.class.js"></script>
+	<script src="./classes/poison-bottle.class.js"></script>
+	<script src="./classes/collectable-coin.class.js"></script>
+	<script src="./classes/keyboard.class.js"></script>
+	<script src="./classes/level.class.js"></script>
+	<script src="./classes/endboss.class.js"></script>
+	<script src="./levels/level1.js"></script>
+	<script src="./classes/world.class.js"></script>
+	<script src="./js/game.js"></script>
+</head>
+
+<body>
+	
+	<div id="fullScreen">
+
+		<div class="button-mobile">
+			<div class="button-mobile-side">
+				<div id="btnLeft" class="button-move"><img src="./img/buttons/btn-left.svg" alt=""></div>
+				<div id="btnRight" class="button-move"><img src="./img/buttons/btn-right.svg" alt=""></div>
+				<div id="btnBubbleAttack" class="button-attack"><img
+						src="./img/1.Sharkie/4.Attack/Bubble trap/op1 (with bubble formation)/7.png" alt=""></div>
+			</div>
+			<div class="button-mobile-side">
+				<div id="btnFinSlap" class="button-attack"><img src="./img/1.Sharkie/4.Attack/Fin slap/5.png" alt="">
+				</div>
+				<div id="btnDown" class="button-move"><img src="./img/buttons/btn-down.svg" alt=""></div>
+				<div id="btnUp" class="button-move"><img src="./img/buttons/btn-up.svg" alt=""></div>
+			</div>
+		</div>
+
+		<canvas id="canvas" width="720" height="480">
+		</canvas>
+
+		<div id="startScreen">
+			<span>Sharkie</span>
+			<div class="start-screen-buttons">
+				<img src="./img/buttons/question.svg" onclick="openHowTo()" alt="">
+				<div class="button" id="startButton" onclick="startGame()">Start</div>
+				<img src="./img/buttons/scalability.svg" onclick="changeScreenModus()" alt="">
+			</div>
+		</div>
+
+		<div id="btnHelpSpound" class="btn-help-sound d-none">
+			<img src="./img/buttons/question.svg" onclick="openHowTo()" alt="">
+			<img id="btnSound" src="./img/buttons/sound-on.svg" onclick="world.changeSoundStatus()" alt="">
+		</div>
+
+		<div id="howToSection" class="how-to d-none">
+			<div class="how-to-explanation">
+				<h2>How to:</h2>
+				<p>Use arrow keys for navigation</p>
+				<p> <b>space</b> -> attack small enemies with fin-slap</p>
+				<p><b>D</b> -> attack endboss with poison-bubble</p>
+				<p>(hint: look out for poison bottles)</p>
+			</div>
+			<div id="btnClose"><img src="./img/buttons/close.svg" alt="" onclick="closeHowTo()"></div>
+		</div>
+
+		<div class="turn-mobile">
+			<span>please turn your device</span>
+		</div>
+
+		<div id="gameLost" class="endscreen d-none">
+			<span>¡you lost!</span>
+			<div class="button" id="btnTryAgainLost" onclick="closeGameLost()">Try again</div>
+		</div>
+
+		<div id="gameWon" class="endscreen d-none">
+			<span>¡you win!</span>
+			<div class="button" id="btnTryAgainWon" onclick="closeGameWon()">Try again</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
